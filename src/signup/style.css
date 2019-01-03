@@ -148,3 +148,11 @@ a {
 .gp-icon {
   margin: 0 23px;
 }
+
+.darkgray {
+  color: darkgray;
+}
+
+.black {
+  color: black;
+}

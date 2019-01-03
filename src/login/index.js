@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './style.css';
-import './main.js';
 import handleErrors from "../functions/handleError";
 
 
@@ -12,9 +11,51 @@ export class Login extends React.Component {
 
     this.state = {
       username: String,
-      password: String
+      password: String,
+      eyeIconColor: String,
+      passwordState: String,
+      blur: String,
+      load: String
     }
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.togglePass = this.togglePass.bind(this);
+  }
+
+  login() {
+    this.setState({
+      blur: "blur",
+      load: "loading-on"
+    })
+  }
+
+  togglePass() {
+    let color;
+    let state;
+    if (this.state.eyeIconColor == "black") 
+      color = "darkgrey";
+    else 
+      color = "black";
+
+    if (this.state.passwordState == "password") 
+      state = "text";
+    else 
+      state = "password";
+    this.setState({
+      eyeIconColor: color,
+      passwordState: state
+    })
+  }
+
+  componentDidMount() {
+    this.setState({
+      username: "",
+      password: "",
+      eyeIconColor: "darkgrey",
+      passwordState: "password",
+      blur: "",
+      load: ""
+    });
   }
 
   handleChange(event) {
@@ -53,21 +94,21 @@ export class Login extends React.Component {
   render() {
     return (
       <div>
-        <div class="loading">
-          <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+        <div className={"loading " + this.state.load}>
+          <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
         </div>
-        <form onSubmit={this.handleSubmit} class="login-container">
-          <div class="login-logo">login</div>
-          <div class="inputs">
-            <div class="static-parts">
-              <div class="group-name login-form-part">
-                <div class="input-icon">
-                  <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+        <form onSubmit={this.handleSubmit} className={"login-container " + this.state.blur}>
+          <div className="login-logo">login</div>
+          <div className="inputs">
+            <div className="static-parts">
+              <div className="group-name login-form-part">
+                <div className="input-icon">
+                  <i className="fa fa-users fa-2x" aria-hidden="true"></i>
                 </div>
-                <div class="input-part">
+                <div className="input-part">
                   <input 
                     type="text" 
-                    class="group-name-input" 
+                    className="group-name-input" 
                     placeholder="group name" 
                     name="username" 
                     onChange={this.handleChange}
@@ -75,30 +116,30 @@ export class Login extends React.Component {
                   />
                 </div>
               </div>
-              <div class="password login-form-part">
-                <div class="input-icon">
-                  <i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+              <div className="password login-form-part">
+                <div className="input-icon">
+                  <i className="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
                 </div>
-                <div class="input-part">
+                <div className="input-part">
                   <input 
-                    type="password" 
-                    class="password-input" 
+                    type={this.state.passwordState} 
+                    className="password-input" 
                     placeholder="password" 
                     name="password" 
                     onChange={this.handleChange}
                     value={this.state.password} 
                   />
                 </div>
-                <div class="input-icon eye-icon clickable" onclick="togglePass()">
-                  <i class="fa fa-eye" aria-hidden="true"></i>
+                <div className="input-icon clickable" onClick={this.togglePass}>
+                  <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true"></i>
                 </div>
               </div>
             </div>
           </div>
-          <div class="login-button" onclick="login()">
-            <button class="login-btn clickable">login</button>
+          <div className="login-button" onclick="login()">
+            <button type="submit" className="login-btn clickable">login</button>
           </div>
-          <div class="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
+          <div className="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
         </form>
       </div>
     );

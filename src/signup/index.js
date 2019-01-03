@@ -13,12 +13,33 @@ export class Signup extends React.Component {
       username: String,
       channelId: String,
       password: String,
-      members: [String]
+      members: [String],
+      eyeIconColor: String,
+      passwordState: String
     };
     this.addMember = this.addMember.bind(this);
     this.handleMembers = this.handleMembers.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.togglePass = this.togglePass.bind(this);
+  }
+
+  togglePass() {
+    let color;
+    let state;
+    if (this.state.eyeIconColor == "black") 
+      color = "darkgrey";
+    else 
+      color = "black";
+
+    if (this.state.passwordState == "password") 
+      state = "text";
+    else 
+      state = "password";
+    this.setState({
+      eyeIconColor: color,
+      passwordState: state
+    })
   }
 
   addMember() {
@@ -27,10 +48,17 @@ export class Signup extends React.Component {
     this.setState( { members: members });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let members = [];
     members.push("");
-    this.setState({ members: members });
+    
+    this.setState({
+      members: members,
+      username: "",
+      password: "",
+      eyeIconColor: "darkgrey",
+      passwordState: "password"
+    });
   }
 
   handleChange(event) {
@@ -38,6 +66,7 @@ export class Signup extends React.Component {
     let value = target.value;
     let name = target.name;
 
+    console.log(value);
     this.setState({
       [name]: value
     })
@@ -50,15 +79,19 @@ export class Signup extends React.Component {
     let members = this.state.members;
     members[index] = value;
 
+    console.log(members[index]);
+
     this.setState({
       members: members
     });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     const data = this.state;
     let that = this;
 
+    console.log(data);
     fetch('/user/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -83,18 +116,18 @@ export class Signup extends React.Component {
     });
     return (
       <div>
-        <div class="signup-container">
-          <div class="signup-logo">SIGNUP</div>
-          <form onSubmit={this.handleSubmit} class="inputs">
-            <div class="static-parts">
-              <div class="group-name signup-form-part">
-                <div class="input-icon">
-                  <i class="fa fa-users fa-2x" aria-hidden="true" />
+        <form onSubmit={this.handleSubmit} className="signup-container">
+          <div className="signup-logo">SIGNUP</div>
+          <div  className="inputs">
+            <div className="static-parts">
+              <div className="group-name signup-form-part">
+                <div className="input-icon">
+                  <i className="fa fa-users fa-2x" aria-hidden="true" />
                 </div>
-                <div class="input-part">
+                <div className="input-part">
                   <input
                     type="text"
-                    class="group-name-input"
+                    className="group-name-input"
                     placeholder="group name"
                     name="username"
                     onChange={this.handleChange}
@@ -102,14 +135,14 @@ export class Signup extends React.Component {
                   />
                 </div>
               </div>
-              <div class="thing-speak signup-form-part">
-                <div class="input-icon">
-                  <i class="fa fa-thermometer-empty fa-2x" aria-hidden="true" />
+              <div className="thing-speak signup-form-part">
+                <div className="input-icon">
+                  <i className="fa fa-thermometer-empty fa-2x" aria-hidden="true" />
                 </div>
-                <div class="input-part">
+                <div className="input-part">
                   <input
                     type="text"
-                    class="thing-speak-input"
+                    className="thing-speak-input"
                     placeholder="thing speak channel"
                     name="channelId"
                     onChange={this.handleChange}
@@ -117,40 +150,42 @@ export class Signup extends React.Component {
                   />
                 </div>
               </div>
-              <div class="password signup-form-part">
-                <div class="input-icon">
-                  <i class="fa fa-unlock-alt fa-2x" aria-hidden="true" />
+              <div className="password signup-form-part">
+                <div className="input-icon">
+                  <i className="fa fa-unlock-alt fa-2x" aria-hidden="true" />
                 </div>
-                <div class="input-part">
+                <div className="input-part">
                   <input
-                    type="password"
-                    class="password-input"
+                    type={this.state.passwordState}
+                    className="password-input"
                     placeholder="password"
                     name="password"
+                    onChange={this.handleChange}
+                    value={this.state.password}
                   />
                 </div>
                 <div
-                  class="input-icon eye-icon clickable"
-                  onclick="togglePass()"
+                  className="input-icon eye-icon clickable"
+                  onClick={this.togglePass}
                 >
-                  <i class="fa fa-eye" aria-hidden="true" />
+                  <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true" />
                 </div>
               </div>
             </div>
-            <div class="dynamic-parts">
+            <div className="dynamic-parts">
               {memberFields}
             </div>
-          </form>
-          <div class="add-member clickable" onClick={this.addMember}>
+          </div>
+          <div className="add-member clickable" onClick={this.addMember}>
             +
           </div>
-          <div class="signup-button">
-            <button class="signup-btn clickable" >signup</button>
+          <div className="signup-button">
+            <input type="submit" className="signup-btn clickable" value="signup" />
           </div>
-          <div class="login">
+          <div className="login">
             already have an acount ?? <Link to={`/user/login`}>login</Link>
           </div>
-        </div>
+        </form>
       </div>
     );
   }

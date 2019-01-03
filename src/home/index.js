@@ -25,100 +25,100 @@ export class Home extends React.Component {
   render() {
     return (
       <div>
-        <div class="wrapper">
+        <div className="wrapper">
           <div
-            class="sidebar"
+            className="sidebar"
             data-color="orange"
             data-image="../assets/img/sidebar-5.jpg"
           >
-            <div class="sidebar-wrapper">
-              <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+            <div className="sidebar-wrapper">
+              <div className="logo">
+                <a href="http://www.creative-tim.com" className="simple-text">
                   IOT
                 </a>
               </div>
-              <ul class="nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="dashboard.html">
-                    <i class="nc-icon nc-chart-pie-35" />
+              <ul className="nav">
+                <li className="nav-item active">
+                  <a className="nav-link" href="dashboard.html">
+                    <i className="nc-icon nc-chart-pie-35" />
                     <p>Dashboard</p>
                   </a>
                 </li>
                 <li>
-                  <a class="nav-link" href="./user.html">
-                    <i class="nc-icon nc-circle-09" />
+                  <a className="nav-link" href="./user.html">
+                    <i className="nc-icon nc-circle-09" />
                     <p>User Profile</p>
                   </a>
                 </li>
 
                 <li>
-                  <a class="nav-link" href="./typography.html">
-                    <i class="nc-icon nc-paper-2" />
+                  <a className="nav-link" href="./typography.html">
+                    <i className="nc-icon nc-paper-2" />
                     <p>Typography</p>
                   </a>
                 </li>
 
                 <li>
-                  <a class="nav-link" href="./maps.html">
-                    <i class="nc-icon nc-pin-3" />
+                  <a className="nav-link" href="./maps.html">
+                    <i className="nc-icon nc-pin-3" />
                     <p>Maps</p>
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="main-panel">
-            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
-              <div class=" container-fluid  ">
-                <a class="navbar-brand" href="#pablo">
+          <div className="main-panel">
+            <nav className="navbar navbar-expand-lg " color-on-scroll="500">
+              <div className=" container-fluid  ">
+                <a className="navbar-brand" href="#pablo">
                   {" "}
                   Dashboard{" "}
                 </a>
                 <button
                   href=""
-                  class="navbar-toggler navbar-toggler-right"
+                  className="navbar-toggler navbar-toggler-right"
                   type="button"
                   data-toggle="collapse"
                   aria-controls="navigation-index"
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
-                  <span class="navbar-toggler-bar burger-lines" />
-                  <span class="navbar-toggler-bar burger-lines" />
-                  <span class="navbar-toggler-bar burger-lines" />
+                  <span className="navbar-toggler-bar burger-lines" />
+                  <span className="navbar-toggler-bar burger-lines" />
+                  <span className="navbar-toggler-bar burger-lines" />
                 </button>
                 <div
-                  class="collapse navbar-collapse justify-content-end"
+                  className="collapse navbar-collapse justify-content-end"
                   id="navigation"
                 >
-                  <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item" />
-                    <li class="dropdown nav-item" />
-                    <li class="nav-item" />
+                  <ul className="nav navbar-nav mr-auto">
+                    <li className="nav-item" />
+                    <li className="dropdown nav-item" />
+                    <li className="nav-item" />
                   </ul>
-                  <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" />
-                    <li class="nav-item dropdown" />
-                    <li class="nav-item">
-                      <a class="nav-link" href="#pablo">
-                        <span class="no-icon">Log out</span>
+                  <ul className="navbar-nav ml-auto">
+                    <li className="nav-item" />
+                    <li className="nav-item dropdown" />
+                    <li className="nav-item">
+                      <a className="nav-link" href="#pablo">
+                        <span className="no-icon">Log out</span>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
             </nav>
-            <div class="content">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="card ">
-                      <div class="card-header ">
-                        <h4 class="card-title">Temperature</h4>
-                        <p class="card-category">...</p>
+            <div className="content">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="card ">
+                      <div className="card-header ">
+                        <h4 className="card-title">Temperature</h4>
+                        <p className="card-category">...</p>
                       </div>
-                      <div class="card-body ">
-                        <div class="ct-chart">
+                      <div className="card-body ">
+                        <div className="ct-chart">
                           <iframe
                             height="260"
                             style="border: 1px solid #cccccc;"
@@ -128,14 +128,14 @@ export class Home extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="card ">
-                      <div class="card-header ">
-                        <h4 class="card-title">Visits</h4>
-                        <p class="card-category">...</p>
+                  <div className="col-md-6">
+                    <div className="card ">
+                      <div className="card-header ">
+                        <h4 className="card-title">Visits</h4>
+                        <p className="card-category">...</p>
                       </div>
-                      <div class="card-body ">
-                        <div class="ct-chart">
+                      <div className="card-body ">
+                        <div className="ct-chart">
                           <iframe
                             height="260"
                             style="border: 1px solid #cccccc;"
