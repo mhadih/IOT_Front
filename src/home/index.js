@@ -111,11 +111,7 @@ export class Home extends React.Component {
                       </div>
                       <div className="card-body ">
                         <div className="ct-chart">
-                          <iframe
-                            height="260"
-                            // style="border: 1px solid #cccccc;"
-                            src="https://thingspeak.com/channels/659128/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-                          />
+                        <iframe src="https://thingspeak.com/channels/659128/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
                         </div>
                       </div>
                     </div>
@@ -128,11 +124,37 @@ export class Home extends React.Component {
                       </div>
                       <div className="card-body ">
                         <div className="ct-chart">
-                          <iframe
-                            height="260"
-                            // style="border: 1px solid #cccccc;"
-                            src="https://thingspeak.com/channels/659128/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-                          />
+                        <iframe src="https://thingspeak.com/channels/659128/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="card ">
+                      <div className="card-header ">
+                        <h4 className="card-title">distance</h4>
+                        <p className="card-category">...</p>
+                      </div>
+                      <div className="card-body ">
+                        <div className="ct-chart">
+                        <iframe src="https://thingspeak.com/channels/659128/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="card ">
+                      <div className="card-header ">
+                        <h4 className="card-title">gas</h4>
+                        <p className="card-category">...</p>
+                      </div>
+                      <div className="card-body ">
+                        <div className="ct-chart">
+                        <iframe src="https://thingspeak.com/channels/659128/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+
                         </div>
                       </div>
                     </div>

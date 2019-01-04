@@ -15,7 +15,7 @@ export class Typography extends React.Component {
         <div
           className="sidebar"
           data-color="orange"
-          data-image="../assets/img/sidebar-5.jpg"
+          data-image="./assets/img/sidebar-5.jpg"
         >
           <div className="sidebar-wrapper">
             <div className="logo">
