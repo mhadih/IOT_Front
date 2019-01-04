@@ -15,7 +15,7 @@ export class User extends React.Component {
         <div
           className="sidebar"
           data-color="orange"
-          data-image="../assets/img/sidebar-5.jpg"
+          data-image="./assets/img/sidebar-5.jpg"
         >
           <div className="sidebar-wrapper">
             <div className="logo">
@@ -111,7 +111,7 @@ export class User extends React.Component {
                               <input
                                 type="text"
                                 className="form-control"
-                                readonly
+                                readOnly
                                 value="group name"
                               />
                             </div>
@@ -123,7 +123,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="thing speak id"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -136,7 +136,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member first name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -147,7 +147,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member last name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -160,7 +160,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member first name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -171,7 +171,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member last name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -184,7 +184,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member first name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>
@@ -195,7 +195,7 @@ export class User extends React.Component {
                                 type="text"
                                 className="form-control"
                                 value="member last name"
-                                readonly
+                                readOnly
                               />
                             </div>
                           </div>

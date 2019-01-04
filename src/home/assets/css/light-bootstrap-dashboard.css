@@ -23,6 +23,9 @@ input:read-only {
 iframe {
     width: 100%;
     overflow: hidden;
+    width:450px;
+     height:260px;
+     border: 1px solid #cccccc;
 }
 
 @keyframes spin {
@@ -2138,7 +2141,7 @@ fieldset[disabled] .form-control {
 }
 
 .navbar.fixed {
-    width: calc(100% - $sidebar-width);
+    width: calc(100% - sidebar-width);
     right: 0;
     left: auto;
     border-radius: 0;
