@@ -2,6 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 // import "./style.css";
 
+function mapStateToProps(state) {
+  return {
+    authenticated: state.authenticated,
+    user: state.user,
+  };
+}
+
 export class User extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +17,23 @@ export class User extends React.Component {
   }
 
   render() {
+		let members = this.props.user.map( (value, index) => {
+			return (
+				<div className="row">
+					<div className="col-md-6 pr-1">
+						<div className="form-group">
+							<label>First Name</label>
+							<input
+								type="text"
+								className="form-control"
+								value={value}
+								readOnly
+							/>
+						</div>
+					</div>
+				</div>
+			);
+		});
     return (
       <div className="wrapper">
         <div
@@ -135,7 +159,7 @@ export class User extends React.Component {
                               <input
                                 type="text"
                                 className="form-control"
-                                value="member first name"
+                                value={this.props.user.}
                                 readOnly
                               />
                             </div>
@@ -212,3 +236,5 @@ export class User extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(User);

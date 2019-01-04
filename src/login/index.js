@@ -5,6 +5,12 @@ import './style.css';
 import handleErrors from "../functions/handleError";
 import Home from "../home"
 
+function mapStateToProps(state) {
+  return {
+    authenticated: state.authenticated,
+    user: state.user,
+  };
+}
 
 export class Login extends React.Component {
   constructor(props) {
@@ -82,13 +88,11 @@ export class Login extends React.Component {
       body: JSON.stringify({ data: data })
     })
       .then(function (response) {
-        toast.success('شما با موفقیت وارد شدید');
         console.log(response);
         return response.json();
       })
       .then(handleErrors)
       .then(function (responseJson) {
-        toast.success('شما با موفقیت وارد شدید');
         that.setState({
           redirect: true
         });
@@ -151,12 +155,14 @@ export class Login extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <div className="login-button" onClick={this.login}> */}
-            <button type="submit" className="login-btn clickable">login</button>
-            {/* </div> */}
+            <div className="login-button" onClick={this.login}>
+              <button type="submit" className="login-btn clickable">login</button>
+            </div>
             <div className="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
           </form>
         </div>
       );
   }
 }
+
+export default connect(mapStateToProps)(Login);

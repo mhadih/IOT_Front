@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Login } from './login/index.js';
 import { Signup } from './signup/index.js';
 import { Home } from './home/index.js'
@@ -7,6 +8,11 @@ import { Map } from './home/map'
 import { Typography } from './home/typography'
 import { User } from './home/user'
 
+function mapStateToProps(state) {
+  return {
+    authenticated: state.authenticated,
+  };
+}
 
 class App extends Component {
   render() {
@@ -25,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default connect(mapStateToProps)(App);

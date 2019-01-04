@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import "./style.css";
 
+function mapStateToProps(state) {
+  return {
+    authenticated: state.authenticated,
+  };
+}
+
 export class Typography extends React.Component {
   constructor(props) {
     super(props);
@@ -172,3 +178,5 @@ export class Typography extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(App);
