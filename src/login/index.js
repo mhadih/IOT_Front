@@ -71,8 +71,10 @@ export class Login extends React.Component {
     });
   }
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
     const data = this.state;
+    const that = this;
 
     fetch('/user/login', {
       method: 'POST',
@@ -80,12 +82,14 @@ export class Login extends React.Component {
       body: JSON.stringify({ data: data })
     })
       .then(function (response) {
+        toast.success('شما با موفقیت وارد شدید');
         console.log(response);
         return response.json();
       })
       .then(handleErrors)
       .then(function (responseJson) {
-        this.setState({
+        toast.success('شما با موفقیت وارد شدید');
+        that.setState({
           redirect: true
         });
         console.log("hadi");
@@ -101,7 +105,7 @@ export class Login extends React.Component {
 
   render() {
     if (this.state.redirect == true || localStorage.getItem("Token"))
-      return ( <Redirect to="/home/dashboard" /> );
+      return ( <Redirect to="/user/signup" /> );
     else
       return (
         <div>
@@ -147,9 +151,9 @@ export class Login extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="login-button" onClick={this.login}>
-              <button type="submit" className="login-btn clickable">login</button>
-            </div>
+            {/* <div className="login-button" onClick={this.login}> */}
+            <button type="submit" className="login-btn clickable">login</button>
+            {/* </div> */}
             <div className="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
           </form>
         </div>

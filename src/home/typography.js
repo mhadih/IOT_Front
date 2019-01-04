@@ -132,7 +132,7 @@ export class Typography extends React.Component {
                       <div className="members">
                         <div className="member">
                           <div className="member-img">
-                            <img src="m.jpeg" alt="" width="90%" />
+                            <img src="./m.jpeg" alt="" width="90%" />
                           </div>
                           <div className="member-info farsi-text">
                             مهدی هادیلو دانشجوی کامپیوتر
@@ -140,7 +140,7 @@ export class Typography extends React.Component {
                         </div>
                         <div className="member">
                           <div className="member-img">
-                            <img src="z.jpeg" alt="" width="90%" height="90%" />
+                            <img src="./z.jpeg" alt="" width="90%" height="90%" />
                           </div>
                           <div className="member-info farsi-text">
                             زیوار حسن زاده صورتی
@@ -151,7 +151,7 @@ export class Typography extends React.Component {
                         </div>
                         <div className="member">
                           <div className="member-img">
-                            <img src="h.jpeg" alt="" width="60%" />
+                            <img src="./h.jpeg" alt="" width="60%" />
                           </div>
                           <div className="member-info farsi-text">
                             <b>DJ</b>
