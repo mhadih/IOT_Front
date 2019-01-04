@@ -1,19 +1,5 @@
 import React from "react";
 // import "./style.css";
-import './assets/img/apple-icon.png';
-import './assets/img/favicon.ico';
-import './assets/css/bootstrap.min.css';
-import './assets/css/light-bootstrap-dashboard.css?v=2.0.1';
-import './assets/css/demo.css';
-// import './assets/js/core/jquery.3.2.1.min.js';
-// import './assets/js/core/popper.min.js';
-// import './assets/js/core/bootstrap.min.js';
-// import './assets/js/plugins/bootstrap-switch.js';
-// import 'https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE';
-// import './assets/js/plugins/chartist.min.js';
-// import './assets/js/plugins/bootstrap-notify.js';
-// import './assets/js/light-bootstrap-dashboard.js?v=2.0.1';
-// import './assets/js/demo.js';
 
 export class Home extends React.Component {
   constructor(props) {
@@ -33,7 +19,7 @@ export class Home extends React.Component {
           >
             <div className="sidebar-wrapper">
               <div className="logo">
-                <a href="http://www.creative-tim.com" className="simple-text">
+                <a href="#" className="simple-text">
                   IOT
                 </a>
               </div>

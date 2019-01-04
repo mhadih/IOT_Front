@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { toast } from 'react-toastify';
 import "./style.css";
 import { MemberField } from "./member-field";
@@ -15,7 +15,8 @@ export class Signup extends React.Component {
       password: String,
       members: [String],
       eyeIconColor: String,
-      passwordState: String
+      passwordState: String,
+      redirect: Boolean
     };
     this.addMember = this.addMember.bind(this);
     this.handleMembers = this.handleMembers.bind(this);
@@ -57,7 +58,8 @@ export class Signup extends React.Component {
       username: "",
       password: "",
       eyeIconColor: "darkgrey",
-      passwordState: "password"
+      passwordState: "password",
+      redirect: false
     });
   }
 
@@ -99,7 +101,9 @@ export class Signup extends React.Component {
     })
       .then(res => {
         if (res.status === 200) {
-          
+          that.setState({
+            redirect: true
+          });
           toast.success('شما با موفقیت ثبت نام شدید!');
         }
         return res.json();
@@ -114,79 +118,84 @@ export class Signup extends React.Component {
     const memberFields = this.state.members.map( (value,index) => {
       return <MemberField handleMembers={this.handleMembers} name={value} index={index+1} key={index} />
     });
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit} className="signup-container">
-          <div className="signup-logo">SIGNUP</div>
-          <div  className="inputs">
-            <div className="static-parts">
-              <div className="group-name signup-form-part">
-                <div className="input-icon">
-                  <i className="fa fa-users fa-2x" aria-hidden="true" />
+    if (this.state.redirect == true)
+      return ( <Redirect to="/user/login" /> );
+    else if (localStorage.getItem("Token"))
+      return ( <Redirect to="/home" /> );
+    else
+      return (
+        <div>
+          <form onSubmit={this.handleSubmit} className="signup-container">
+            <div className="signup-logo">SIGNUP</div>
+            <div  className="inputs">
+              <div className="static-parts">
+                <div className="group-name signup-form-part">
+                  <div className="input-icon">
+                    <i className="fa fa-users fa-2x" aria-hidden="true" />
+                  </div>
+                  <div className="input-part">
+                    <input
+                      type="text"
+                      className="group-name-input"
+                      placeholder="group name"
+                      name="username"
+                      onChange={this.handleChange}
+                      value={this.state.username}
+                    />
+                  </div>
                 </div>
-                <div className="input-part">
-                  <input
-                    type="text"
-                    className="group-name-input"
-                    placeholder="group name"
-                    name="username"
-                    onChange={this.handleChange}
-                    value={this.state.username}
-                  />
+                <div className="thing-speak signup-form-part">
+                  <div className="input-icon">
+                    <i className="fa fa-thermometer-empty fa-2x" aria-hidden="true" />
+                  </div>
+                  <div className="input-part">
+                    <input
+                      type="text"
+                      className="thing-speak-input"
+                      placeholder="thing speak channel"
+                      name="channelId"
+                      onChange={this.handleChange}
+                      value={this.state.channelId}
+                    />
+                  </div>
+                </div>
+                <div className="password signup-form-part">
+                  <div className="input-icon">
+                    <i className="fa fa-unlock-alt fa-2x" aria-hidden="true" />
+                  </div>
+                  <div className="input-part">
+                    <input
+                      type={this.state.passwordState}
+                      className="password-input"
+                      placeholder="password"
+                      name="password"
+                      onChange={this.handleChange}
+                      value={this.state.password}
+                    />
+                  </div>
+                  <div
+                    className="input-icon eye-icon clickable"
+                    onClick={this.togglePass}
+                  >
+                    <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true" />
+                  </div>
                 </div>
               </div>
-              <div className="thing-speak signup-form-part">
-                <div className="input-icon">
-                  <i className="fa fa-thermometer-empty fa-2x" aria-hidden="true" />
-                </div>
-                <div className="input-part">
-                  <input
-                    type="text"
-                    className="thing-speak-input"
-                    placeholder="thing speak channel"
-                    name="channelId"
-                    onChange={this.handleChange}
-                    value={this.state.channelId}
-                  />
-                </div>
-              </div>
-              <div className="password signup-form-part">
-                <div className="input-icon">
-                  <i className="fa fa-unlock-alt fa-2x" aria-hidden="true" />
-                </div>
-                <div className="input-part">
-                  <input
-                    type={this.state.passwordState}
-                    className="password-input"
-                    placeholder="password"
-                    name="password"
-                    onChange={this.handleChange}
-                    value={this.state.password}
-                  />
-                </div>
-                <div
-                  className="input-icon eye-icon clickable"
-                  onClick={this.togglePass}
-                >
-                  <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true" />
-                </div>
+              <div className="dynamic-parts">
+                {memberFields}
               </div>
             </div>
-            <div className="dynamic-parts">
-              {memberFields}
+            <div className="add-member clickable" onClick={this.addMember}>
+              +
             </div>
-          </div>
-          <div className="add-member clickable" onClick={this.addMember}>
-            +
-          </div>
-          <div className="signup-button">
-            <input type="submit" className="signup-btn clickable" value="signup" />
-          </div>
-          <div className="login">
-            already have an acount ?? <Link to={`/user/login`}>login</Link>
-          </div>
-        </form>
-      </div>
-    );
+            <div className="signup-button">
+              <input type="submit" className="signup-btn clickable" value="signup" />
+            </div>
+            <div className="login">
+              already have an acount ?? <Link to={`/user/login`}>login</Link>
+            </div>
+          </form>
+        </div>
+      );
   }
 }

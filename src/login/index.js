@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import './style.css';
 import handleErrors from "../functions/handleError";
+import Home from "../home"
 
 
 export class Login extends React.Component {
@@ -15,7 +16,8 @@ export class Login extends React.Component {
       eyeIconColor: String,
       passwordState: String,
       blur: String,
-      load: String
+      load: String,
+      redirect: Boolean
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,7 +56,8 @@ export class Login extends React.Component {
       eyeIconColor: "darkgrey",
       passwordState: "password",
       blur: "",
-      load: ""
+      load: "",
+      redirect: false
     });
   }
 
@@ -71,16 +74,21 @@ export class Login extends React.Component {
   handleSubmit() {
     const data = this.state;
 
-    fetch('/api/v1/user/login', {
+    fetch('/user/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ data: data })
     })
       .then(function (response) {
+        console.log(response);
         return response.json();
       })
       .then(handleErrors)
       .then(function (responseJson) {
+        this.setState({
+          redirect: true
+        });
+        console.log("hadi");
         localStorage.setItem('Token', responseJson.data.Token);
       })
       .then(function () {
@@ -92,56 +100,59 @@ export class Login extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className={"loading " + this.state.load}>
-          <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-        </div>
-        <form onSubmit={this.handleSubmit} className={"login-container " + this.state.blur}>
-          <div className="login-logo">login</div>
-          <div className="inputs">
-            <div className="static-parts">
-              <div className="group-name login-form-part">
-                <div className="input-icon">
-                  <i className="fa fa-users fa-2x" aria-hidden="true"></i>
+    if (this.state.redirect == true || localStorage.getItem("Token"))
+      return ( <Redirect to="/home" /> );
+    else
+      return (
+        <div>
+          <div className={"loading " + this.state.load}>
+            <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+          </div>
+          <form onSubmit={this.handleSubmit} className={"login-container " + this.state.blur}>
+            <div className="login-logo">login</div>
+            <div className="inputs">
+              <div className="static-parts">
+                <div className="group-name login-form-part">
+                  <div className="input-icon">
+                    <i className="fa fa-users fa-2x" aria-hidden="true"></i>
+                  </div>
+                  <div className="input-part">
+                    <input 
+                      type="text" 
+                      className="group-name-input" 
+                      placeholder="group name" 
+                      name="username" 
+                      onChange={this.handleChange}
+                      value={this.state.username}
+                    />
+                  </div>
                 </div>
-                <div className="input-part">
-                  <input 
-                    type="text" 
-                    className="group-name-input" 
-                    placeholder="group name" 
-                    name="username" 
-                    onChange={this.handleChange}
-                    value={this.state.username}
-                  />
-                </div>
-              </div>
-              <div className="password login-form-part">
-                <div className="input-icon">
-                  <i className="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
-                </div>
-                <div className="input-part">
-                  <input 
-                    type={this.state.passwordState} 
-                    className="password-input" 
-                    placeholder="password" 
-                    name="password" 
-                    onChange={this.handleChange}
-                    value={this.state.password} 
-                  />
-                </div>
-                <div className="input-icon clickable" onClick={this.togglePass}>
-                  <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true"></i>
+                <div className="password login-form-part">
+                  <div className="input-icon">
+                    <i className="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
+                  </div>
+                  <div className="input-part">
+                    <input 
+                      type={this.state.passwordState} 
+                      className="password-input" 
+                      placeholder="password" 
+                      name="password" 
+                      onChange={this.handleChange}
+                      value={this.state.password} 
+                    />
+                  </div>
+                  <div className="input-icon clickable" onClick={this.togglePass}>
+                    <i className={"fa fa-eye " + this.state.eyeIconColor} aria-hidden="true"></i>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="login-button" onclick="login()">
-            <button type="submit" className="login-btn clickable">login</button>
-          </div>
-          <div className="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
-        </form>
-      </div>
-    );
+            <div className="login-button" onClick={this.login}>
+              <button type="submit" className="login-btn clickable">login</button>
+            </div>
+            <div className="signup">don't have an accoun yet ?? <Link to={`/user/signup`}>signup</Link></div>
+          </form>
+        </div>
+      );
   }
 }
