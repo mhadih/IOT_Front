@@ -11,15 +11,15 @@ export class User extends React.Component {
 
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
         <div
-          class="sidebar"
+          className="sidebar"
           data-color="orange"
           data-image="../assets/img/sidebar-5.jpg"
         >
-          <div class="sidebar-wrapper">
-            <div class="logo">
-              <a href="http://www.creative-tim.com" class="simple-text">
+          <div className="sidebar-wrapper">
+            <div className="logo">
+              <a href="#" className="simple-text">
                 IOT
               </a>
             </div>
@@ -53,147 +53,147 @@ export class User extends React.Component {
             </ul>
           </div>
         </div>
-        <div class="main-panel">
-          <nav class="navbar navbar-expand-lg " color-on-scroll="500">
-            <div class=" container-fluid  ">
-              <a class="navbar-brand" href="#pablo">
+        <div className="main-panel">
+          <nav className="navbar navbar-expand-lg " color-on-scroll="500">
+            <div className=" container-fluid  ">
+              <a className="navbar-brand" href="#">
                 {" "}
                 User{" "}
               </a>
               <button
                 href=""
-                class="navbar-toggler navbar-toggler-right"
+                className="navbar-toggler navbar-toggler-right"
                 type="button"
                 data-toggle="collapse"
                 aria-controls="navigation-index"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-bar burger-lines" />
-                <span class="navbar-toggler-bar burger-lines" />
-                <span class="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
               </button>
               <div
-                class="collapse navbar-collapse justify-content-end"
+                className="collapse navbar-collapse justify-content-end"
                 id="navigation"
               >
-                <ul class="nav navbar-nav mr-auto">
-                  <li class="nav-item" />
-                  <li class="dropdown nav-item" />
-                  <li class="nav-item" />
+                <ul className="nav navbar-nav mr-auto">
+                  <li className="nav-item" />
+                  <li className="dropdown nav-item" />
+                  <li className="nav-item" />
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item" />
-                  <li class="nav-item dropdown" />
-                  <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                      <span class="no-icon">Log out</span>
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item" />
+                  <li className="nav-item dropdown" />
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <span className="no-icon">Log out</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
-          <div class="content">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card">
-                    <div class="card-header">
+          <div className="content">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="card">
+                    <div className="card-header">
                       <h4>group profile</h4>
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                       <form>
-                        <div class="row">
-                          <div class="col-md-5 pr-1">
-                            <div class="form-group">
+                        <div className="row">
+                          <div className="col-md-5 pr-1">
+                            <div className="form-group">
                               <label>group name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 readonly
                                 value="group name"
                               />
                             </div>
                           </div>
-                          <div class="col-md-3 px-1">
-                            <div class="form-group">
+                          <div className="col-md-3 px-1">
+                            <div className="form-group">
                               <label>Thing speak channel id</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="thing speak id"
                                 readonly
                               />
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6 pr-1">
-                            <div class="form-group">
+                        <div className="row">
+                          <div className="col-md-6 pr-1">
+                            <div className="form-group">
                               <label>First Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member first name"
                                 readonly
                               />
                             </div>
                           </div>
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group">
+                          <div className="col-md-6 pl-1">
+                            <div className="form-group">
                               <label>Last Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member last name"
                                 readonly
                               />
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6 pr-1">
-                            <div class="form-group">
+                        <div className="row">
+                          <div className="col-md-6 pr-1">
+                            <div className="form-group">
                               <label>First Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member first name"
                                 readonly
                               />
                             </div>
                           </div>
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group">
+                          <div className="col-md-6 pl-1">
+                            <div className="form-group">
                               <label>Last Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member last name"
                                 readonly
                               />
                             </div>
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6 pr-1">
-                            <div class="form-group">
+                        <div className="row">
+                          <div className="col-md-6 pr-1">
+                            <div className="form-group">
                               <label>First Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member first name"
                                 readonly
                               />
                             </div>
                           </div>
-                          <div class="col-md-6 pl-1">
-                            <div class="form-group">
+                          <div className="col-md-6 pl-1">
+                            <div className="form-group">
                               <label>Last Name</label>
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 value="member last name"
                                 readonly
                               />
