@@ -31,7 +31,7 @@ body {
   align-items: center;
 }
 
-input {
+.singup-input {
   width: 100%;
   height: 80%;
   padding: 0;
@@ -86,10 +86,6 @@ a {
   border-radius: 30px;
   display: flex;
   justify-content: left;
-}
-
-.inputs {
-  /* width: 90%; */
 }
 
 .input-part {}

@@ -15,7 +15,7 @@ export class Home extends React.Component {
           <div
             className="sidebar"
             data-color="orange"
-            data-image="../assets/img/sidebar-5.jpg"
+            data-image="./assets/img/sidebar-5.jpg"
           >
             <div className="sidebar-wrapper">
               <div className="logo">
@@ -107,7 +107,7 @@ export class Home extends React.Component {
                         <div className="ct-chart">
                           <iframe
                             height="260"
-                            style="border: 1px solid #cccccc;"
+                            // style="border: 1px solid #cccccc;"
                             src="https://thingspeak.com/channels/659128/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
                           />
                         </div>
@@ -124,7 +124,7 @@ export class Home extends React.Component {
                         <div className="ct-chart">
                           <iframe
                             height="260"
-                            style="border: 1px solid #cccccc;"
+                            // style="border: 1px solid #cccccc;"
                             src="https://thingspeak.com/channels/659128/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
                           />
                         </div>

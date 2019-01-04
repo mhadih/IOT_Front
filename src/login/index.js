@@ -110,7 +110,7 @@ export class Login extends React.Component {
           </div>
           <form onSubmit={this.handleSubmit} className={"login-container " + this.state.blur}>
             <div className="login-logo">login</div>
-            <div className="inputs">
+            <div className="login-inputs">
               <div className="static-parts">
                 <div className="group-name login-form-part">
                   <div className="input-icon">
@@ -119,7 +119,7 @@ export class Login extends React.Component {
                   <div className="input-part">
                     <input 
                       type="text" 
-                      className="group-name-input" 
+                      className="group-name-input login-input" 
                       placeholder="group name" 
                       name="username" 
                       onChange={this.handleChange}
@@ -134,7 +134,7 @@ export class Login extends React.Component {
                   <div className="input-part">
                     <input 
                       type={this.state.passwordState} 
-                      className="password-input" 
+                      className="password-input login-input" 
                       placeholder="password" 
                       name="password" 
                       onChange={this.handleChange}
