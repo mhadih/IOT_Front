@@ -127,7 +127,7 @@ export class Signup extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit} className="signup-container">
             <div className="signup-logo">SIGNUP</div>
-            <div  className="signup-inputs">
+            <div  className="inputs">
               <div className="static-parts">
                 <div className="group-name signup-form-part">
                   <div className="input-icon">

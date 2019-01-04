@@ -19,7 +19,7 @@ export class Map extends React.Component {
         >
           <div class="sidebar-wrapper">
             <div class="logo">
-              <a href="http://www.creative-tim.com" class="simple-text">
+              <a href="#" class="simple-text">
                 IOT
               </a>
             </div>
@@ -56,7 +56,7 @@ export class Map extends React.Component {
         <div class="main-panel">
           <nav class="navbar navbar-expand-lg " color-on-scroll="500">
             <div class=" container-fluid  ">
-              <a class="navbar-brand" href="#pablo">
+              <a class="navbar-brand" href="#">
                 {" "}
                 Maps{" "}
               </a>
@@ -86,7 +86,7 @@ export class Map extends React.Component {
                   <li class="nav-item" />
                   <li class="nav-item dropdown" />
                   <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
+                    <a class="nav-link" href="#">
                       <span class="no-icon">Log out</span>
                     </a>
                   </li>
