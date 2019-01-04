@@ -44,8 +44,10 @@ html {
   }
   
   .login-container {
+    top: 172px;
+    position: relative;
     background: white;
-    /* width: 40%; */
+    width: 420px;
     height: auto;
     margin: 0 auto;
     display: flex;

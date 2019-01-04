@@ -32,14 +32,14 @@ export class MemberField extends React.Component {
 
   render() {
     return (
-      <div class="member-name signup-form-part">
-        <div class="input-icon">
-          <i class="fa fa-user fa-2x" aria-hidden="true" />
+      <div className="member-name signup-form-part">
+        <div className="input-icon">
+          <i className="fa fa-user fa-2x" aria-hidden="true" />
         </div>
-        <div class="input-part">
+        <div className="input-part">
           <input
             type="text"
-            class="member-name-input"
+            className="member-name-input"
             placeholder={"member name " + this.props.index}
             onChange={this.handleChange}
             value={this.state.name}

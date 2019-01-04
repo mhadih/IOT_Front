@@ -11,15 +11,15 @@ export class Typography extends React.Component {
 
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
         <div
-          class="sidebar"
+          className="sidebar"
           data-color="orange"
           data-image="../assets/img/sidebar-5.jpg"
         >
-          <div class="sidebar-wrapper">
-            <div class="logo">
-              <a href="http://www.creative-tim.com" class="simple-text">
+          <div className="sidebar-wrapper">
+            <div className="logo">
+              <a href="http://www.creative-tim.com" className="simple-text">
                 IOT
               </a>
             </div>
@@ -53,61 +53,61 @@ export class Typography extends React.Component {
             </ul>
           </div>
         </div>
-        <div class="main-panel">
-          <nav class="navbar navbar-expand-lg " color-on-scroll="500">
-            <div class=" container-fluid  ">
-              <a class="navbar-brand" href="#pablo">
+        <div className="main-panel">
+          <nav className="navbar navbar-expand-lg " color-on-scroll="500">
+            <div className=" container-fluid  ">
+              <a className="navbar-brand" href="#pablo">
                 {" "}
                 Typography{" "}
               </a>
               <button
                 href=""
-                class="navbar-toggler navbar-toggler-right"
+                className="navbar-toggler navbar-toggler-right"
                 type="button"
                 data-toggle="collapse"
                 aria-controls="navigation-index"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-bar burger-lines" />
-                <span class="navbar-toggler-bar burger-lines" />
-                <span class="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
+                <span className="navbar-toggler-bar burger-lines" />
               </button>
               <div
-                class="collapse navbar-collapse justify-content-end"
+                className="collapse navbar-collapse justify-content-end"
                 id="navigation"
               >
-                <ul class="nav navbar-nav mr-auto">
-                  <li class="nav-item" />
-                  <li class="dropdown nav-item" />
-                  <li class="nav-item" />
+                <ul className="nav navbar-nav mr-auto">
+                  <li className="nav-item" />
+                  <li className="dropdown nav-item" />
+                  <li className="nav-item" />
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item" />
-                  <li class="nav-item dropdown" />
-                  <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                      <span class="no-icon">Log out</span>
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item" />
+                  <li className="nav-item dropdown" />
+                  <li className="nav-item">
+                    <a className="nav-link" href="#pablo">
+                      <span className="no-icon">Log out</span>
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
-          <div class="content">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card">
-                    <div class="card-header">
-                      <h4 class="card-title">IOT</h4>
+          <div className="content">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="card">
+                    <div className="card-header">
+                      <h4 className="card-title">IOT</h4>
                     </div>
-                    <div class="card-body">
-                      <div class="typography-line">
-                        <h1 class="farsi-text">اینترنت اشیا</h1>
+                    <div className="card-body">
+                      <div className="typography-line">
+                        <h1 className="farsi-text">اینترنت اشیا</h1>
                       </div>
-                      <div class="typography-line">
-                        <p class="farsi-text">
+                      <div className="typography-line">
+                        <p className="farsi-text">
                           امروزه که همه چیز به دنیای مجازی پیوند خورده از پرداخت
                           قبض گرفته تا خرید انواع چیزها با اینترنت انجام میشود
                           پس اینترنت اشیا می تواند خیلی مفید باشد
@@ -118,9 +118,9 @@ export class Typography extends React.Component {
                           ها دسترسی داشته باشیم
                         </p>
                       </div>
-                      <div class="typography-line" />
-                      <div class="typography-line">
-                        <p class="farsi-text">
+                      <div className="typography-line" />
+                      <div className="typography-line">
+                        <p className="farsi-text">
                           ابتدا با نود ام یو سی اشنا شدیم و سپس با با محیط
                           اردواینو ک بتوانیم نود ام یو سی را برنامه ریزی کنیم
                           <br />
@@ -129,31 +129,31 @@ export class Typography extends React.Component {
                           داده بگیریم و آن ها را پرذازش کنیم
                         </p>
                       </div>
-                      <div class="members">
-                        <div class="member">
-                          <div class="member-img">
+                      <div className="members">
+                        <div className="member">
+                          <div className="member-img">
                             <img src="m.jpeg" alt="" width="90%" />
                           </div>
-                          <div class="member-info farsi-text">
+                          <div className="member-info farsi-text">
                             مهدی هادیلو دانشجوی کامپیوتر
                           </div>
                         </div>
-                        <div class="member">
-                          <div class="member-img">
+                        <div className="member">
+                          <div className="member-img">
                             <img src="z.jpeg" alt="" width="90%" height="90%" />
                           </div>
-                          <div class="member-info farsi-text">
+                          <div className="member-info farsi-text">
                             زیوار حسن زاده صورتی
                             <br />
                             کامپیوتر ۹۶
                             <b>رنک ۲</b>
                           </div>
                         </div>
-                        <div class="member">
-                          <div class="member-img">
+                        <div className="member">
+                          <div className="member-img">
                             <img src="h.jpeg" alt="" width="60%" />
                           </div>
-                          <div class="member-info farsi-text">
+                          <div className="member-info farsi-text">
                             <b>DJ</b>
                             <br />
                             محمد هادی حجت کامپیوتر ۹۶ علاقه مند به مسایل
