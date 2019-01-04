@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./assets/img/apple-icon.png";
-import "./assets/img/favicon.ico";
+// import "./assets/img/apple-icon.png";
+// import "./assets/img/favicon.ico";
 // import "https://fonts.googleapis.com/css?family=Montserrat:400,700,200";
 // import "https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css";
-import "./assets/css/bootstrap.min.css";
-import "./assets/css/light-bootstrap-dashboard.css?v=2.0.1";
+// import "./assets/css/bootstrap.min.css";
+// import "./assets/css/light-bootstrap-dashboard.css?v=2.0.1";
 // import "./style.css";
 
 export class Home extends React.Component {
@@ -47,13 +47,6 @@ export class Home extends React.Component {
                   <Link to={`/home/typography`} className="nav-link">
                     <i className="nc-icon nc-paper-2" />
                     <p>Typography</p>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to={`/home/map`} className="nav-link">
-                    <i className="nc-icon nc-pin-3" />
-                    <p>Maps</p>
                   </Link>
                 </li>
               </ul>
