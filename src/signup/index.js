@@ -124,7 +124,7 @@ export class Signup extends React.Component {
       return ( <Redirect to="/home/dashboard" /> );
     else
       return (
-        <div>
+        
           <form onSubmit={this.handleSubmit} className="signup-container">
             <div className="signup-logo">SIGNUP</div>
             <div  className="inputs">
@@ -195,7 +195,7 @@ export class Signup extends React.Component {
               already have an acount ?? <Link to={`/user/login`}>login</Link>
             </div>
           </form>
-        </div>
+        
       );
   }
 }
