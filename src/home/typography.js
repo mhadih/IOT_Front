@@ -43,13 +43,6 @@ export class Typography extends React.Component {
                   <p>Typography</p>
                 </Link>
               </li>
-
-              <li>
-                <Link to={`/home/map`} className="nav-link">
-                  <i className="nc-icon nc-pin-3" />
-                  <p>Maps</p>
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
