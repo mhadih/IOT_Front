@@ -101,7 +101,7 @@ export class Login extends React.Component {
 
   render() {
     if (this.state.redirect == true || localStorage.getItem("Token"))
-      return ( <Redirect to="/home" /> );
+      return ( <Redirect to="/home/dashboard" /> );
     else
       return (
         <div>

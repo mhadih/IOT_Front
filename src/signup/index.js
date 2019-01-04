@@ -121,7 +121,7 @@ export class Signup extends React.Component {
     if (this.state.redirect == true)
       return ( <Redirect to="/user/login" /> );
     else if (localStorage.getItem("Token"))
-      return ( <Redirect to="/home" /> );
+      return ( <Redirect to="/home/dashboard" /> );
     else
       return (
         <div>

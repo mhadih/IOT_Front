@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 // import "./style.css";
 
-export class Home extends React.Component {
+export class User extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,30 +23,32 @@ export class Home extends React.Component {
                 IOT
               </a>
             </div>
-            <ul class="nav">
-              <li>
-                <a class="nav-link" href="dashboard.html">
-                  <i class="nc-icon nc-chart-pie-35" />
+            <ul className="nav">
+              <li className="nav-item active">
+                <Link to={`/home/dashboard`} className="nav-link">
+                  <i className="nc-icon nc-chart-pie-35" />
                   <p>Dashboard</p>
-                </a>
+                </Link>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="./user.html">
-                  <i class="nc-icon nc-circle-09" />
+              <li>
+                <Link to={`/home/user`} className="nav-link">
+                  <i className="nc-icon nc-circle-09" />
                   <p>User Profile</p>
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a class="nav-link" href="./typography.html">
-                  <i class="nc-icon nc-paper-2" />
+                <Link to={`/home/typography`} className="nav-link">
+                  <i className="nc-icon nc-paper-2" />
                   <p>Typography</p>
-                </a>
+                </Link>
               </li>
+
               <li>
-                <a class="nav-link" href="./maps.html">
-                  <i class="nc-icon nc-pin-3" />
+                <Link to={`/home/map`} className="nav-link">
+                  <i className="nc-icon nc-pin-3" />
                   <p>Maps</p>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

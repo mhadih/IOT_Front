@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 // import "./style.css";
 
 export class Home extends React.Component {
@@ -25,30 +26,30 @@ export class Home extends React.Component {
               </div>
               <ul className="nav">
                 <li className="nav-item active">
-                  <a className="nav-link" href="dashboard.html">
+                  <Link to={`/home/dashboard`} className="nav-link" >
                     <i className="nc-icon nc-chart-pie-35" />
                     <p>Dashboard</p>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="nav-link" href="./user.html">
+                  <Link to={`/home/user`} className="nav-link">
                     <i className="nc-icon nc-circle-09" />
                     <p>User Profile</p>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a className="nav-link" href="./typography.html">
+                  <Link to={`/home/typography`} className="nav-link">
                     <i className="nc-icon nc-paper-2" />
                     <p>Typography</p>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a className="nav-link" href="./maps.html">
+                  <Link to={`/home/map`} className="nav-link">
                     <i className="nc-icon nc-pin-3" />
                     <p>Maps</p>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
