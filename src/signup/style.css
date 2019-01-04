@@ -31,7 +31,7 @@ body {
   align-items: center;
 }
 
-.singup-input {
+.singup-inputs {
   width: 100%;
   height: 80%;
   padding: 0;
@@ -39,6 +39,10 @@ body {
   outline: none;
   font-size: 18px;
   font-family: sans-serif;
+}
+
+.input-part input {
+  border: none;
 }
 
 input::placeholder {
@@ -101,7 +105,7 @@ a {
 .add-member {
   width: 40px;
   /* margin: 0 auto; */
-  margin-left: 50%;
+  /* margin-left: 50%; */
   height: 40px;
   display: flex;
   justify-content: center;

@@ -57,7 +57,7 @@ export class Home extends React.Component {
           <div className="main-panel">
             <nav className="navbar navbar-expand-lg " color-on-scroll="500">
               <div className=" container-fluid  ">
-                <a className="navbar-brand" href="#pablo">
+                <a className="navbar-brand" href="#">
                   {" "}
                   Dashboard{" "}
                 </a>
@@ -87,7 +87,7 @@ export class Home extends React.Component {
                     <li className="nav-item" />
                     <li className="nav-item dropdown" />
                     <li className="nav-item">
-                      <a className="nav-link" href="#pablo">
+                      <a className="nav-link" href="#">
                         <span className="no-icon">Log out</span>
                       </a>
                     </li>
